@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Axios from '../axios';
+import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
 import Link from 'next/link'
 
@@ -40,7 +40,6 @@ function editSlip() {
             department: employee.department,
             salary: employee.salary,
             start_date: employee.start_date,
-            end_date: employee.end_date,
             social_secure: employee.social_secure,
             personal_leave: employee.personal_leave,
             sick_leave: employee.sick_leave,
@@ -69,7 +68,6 @@ function editSlip() {
                 department: "",
                 salary: 0,
                 start_date: "",
-                end_date: "",
                 social_secure: 0,
                 personal_leave: 0,
                 sick_leave: 0,
@@ -258,22 +256,7 @@ function editSlip() {
                                     </label>
                                 </div>
 
-                                <div className="mb-3">
-                                    <label className="form-control w-full">
-                                        <div className="label">
-                                            <span className="label-text">วันที่สิ้นสุดทำงาน</span>
-                                        </div>
-                                        <input
-                                            type="text"
-                                            placeholder="กรอกวันที่สิ้นสุดทำงาน.."
-                                            name="end_date"
-                                            className="input input-bordered w-full"
-                                            onChange={handleChange}
-                                            required
-                                            value={employee.end_date}
-                                        />
-                                    </label>
-                                </div>
+                            
                                 <div className="mb-3">
                                     <label className="form-control w-full">
                                         <div className="label">

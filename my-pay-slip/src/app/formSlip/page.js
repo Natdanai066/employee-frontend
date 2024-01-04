@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { format,isValid } from 'date-fns';
 import Axios from "axios";
 import Link from 'next/link'
+import DatePicker from "react-multi-date-picker"
 
 function SignUp() {
   const BASE_URL = "http://localhost:3001"
@@ -13,8 +15,7 @@ function SignUp() {
     prefix: "",
     department: "",
     salary: 0,
-    start_date: "",
-    end_date: "",
+    start_date: new Date(),
     social_secure: 0,
     personal_leave: 0,
     sick_leave: 0,
@@ -31,43 +32,53 @@ function SignUp() {
     setValues({ ...values, [event.target.name]: [event.target.value] });
   };
 
+  const handleDateChange = (date) => {
+    if(isValid(date)){
+  const formattedDate = format(date, 'yyyy/MM/dd');
+    setValues((prevData) => ({
+      ...prevData,
+      start_date: formattedDate,
+    }));
+  }
+  }; 
+  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(values);
+    alert(values);
+    // try {
+    //   // เพิ่มโค้ด Axios.post เพื่อส่งข้อมูลไปยัง API
+    //   await Axios.post(`${BASE_URL}/employee`, values)
+    //     .then((res) => console.log("Registered Successfully!!"))
+    //     .catch((err) => console.log(err));
 
-    try {
-      // เพิ่มโค้ด Axios.post เพื่อส่งข้อมูลไปยัง API
-      await Axios.post(`${BASE_URL}/employee`, values)
-        .then((res) => console.log("Registered Successfully!!"))
-        .catch((err) => console.log(err));
+    //   setValues({
+    //     f_name: "",
+    //     l_name: "",
+    //     iden_no: "",
+    //     tel: "",
+    //     prefix: "",
+    //     department: "",
+    //     salary: 0,
+    //     start_date: new Date(),
+    //     social_secure: 0,
+    //     personal_leave: 0,
+    //     sick_leave: 0,
+    //     bank: "",
+    //     stage:"",
+    //     acc_num:"",
+    //     bank_branch:"",
+    //     ot_hour:"",
+    //     circulation:"",
+    //     commission:"",
+    //   });
 
-      setValues({
-        f_name: "",
-        l_name: "",
-        iden_no: "",
-        tel: "",
-        prefix: "",
-        department: "",
-        salary: 0,
-        start_date: "",
-        end_date: "",
-        social_secure: 0,
-        personal_leave: 0,
-        sick_leave: 0,
-        bank: "",
-        stage:"",
-        acc_num:"",
-        bank_branch:"",
-        ot_hour:"",
-        circulation:"",
-        commission:"",
-      });
+    //   window.location.reload();
 
-      window.location.reload();
-
-    } catch (error) {
-      console.log('error', error);
-    }
+    // } catch (error) {
+    //   console.log('error', error);
+    // }
   };
 
   return (
@@ -219,33 +230,24 @@ function SignUp() {
                     <div className="label">
                       <span className="label-text">วันที่เริ่มทำงาน</span>
                     </div>
-                    <input
+                    {/* <input
                       type="text"
                       placeholder="กรอกวันที่เริ่มทำงาน.."
                       name="start_date"
                       className="input input-bordered w-full"
                       onChange={handleChange}
                       required
-                    />
+                    /> */}
+                    <DatePicker 
+                      name="start_date"
+                      selected={values.start_date}
+                      onChange={handleDateChange}
+                      dateFormat="DD/MM/YYYY"
+  // required
+/>
                   </label>
                 </div>
 
-                <div className="mb-3">
-                  <label className="form-control w-full">
-                    <div className="label">
-                      <span className="label-text">วันที่สิ้นสุดทำงาน</span>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="กรอกวันที่สิ้นสุดทำงาน.."
-                      name="end_date"
-                      className="input input-bordered w-full"
-                      onChange={handleChange}
-                      required
-                    />
-                  </label>
-                  
-                </div>
                 <div className="mb-3">
                                     <label className="form-control w-full">
                                         <div className="label">
