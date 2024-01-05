@@ -47,38 +47,38 @@ function SignUp() {
     event.preventDefault();
     console.log(values);
     alert(values);
-    // try {
-    //   // เพิ่มโค้ด Axios.post เพื่อส่งข้อมูลไปยัง API
-    //   await Axios.post(`${BASE_URL}/employee`, values)
-    //     .then((res) => console.log("Registered Successfully!!"))
-    //     .catch((err) => console.log(err));
+    try {
+      // เพิ่มโค้ด Axios.post เพื่อส่งข้อมูลไปยัง API
+      await Axios.post(`${BASE_URL}/employee`, values)
+        .then((res) => console.log("Registered Successfully!!"))
+        .catch((err) => console.log(err));
 
-    //   setValues({
-    //     f_name: "",
-    //     l_name: "",
-    //     iden_no: "",
-    //     tel: "",
-    //     prefix: "",
-    //     department: "",
-    //     salary: 0,
-    //     start_date: new Date(),
-    //     social_secure: 0,
-    //     personal_leave: 0,
-    //     sick_leave: 0,
-    //     bank: "",
-    //     stage:"",
-    //     acc_num:"",
-    //     bank_branch:"",
-    //     ot_hour:"",
-    //     circulation:"",
-    //     commission:"",
-    //   });
+      setValues({
+        f_name: "",
+        l_name: "",
+        iden_no: "",
+        tel: "",
+        prefix: "",
+        department: "",
+        salary: 0,
+        start_date: new Date(),
+        social_secure: 0,
+        personal_leave: 0,
+        sick_leave: 0,
+        bank: "",
+        stage:"",
+        acc_num:"",
+        bank_branch:"",
+        ot_hour:"",
+        circulation:"",
+        commission:"",
+      });
 
-    //   window.location.reload();
+      window.location.reload();
 
-    // } catch (error) {
-    //   console.log('error', error);
-    // }
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (
@@ -230,21 +230,16 @@ function SignUp() {
                     <div className="label">
                       <span className="label-text">วันที่เริ่มทำงาน</span>
                     </div>
-                    {/* <input
+                    <input
                       type="text"
                       placeholder="กรอกวันที่เริ่มทำงาน.."
                       name="start_date"
                       className="input input-bordered w-full"
                       onChange={handleChange}
                       required
-                    /> */}
-                    <DatePicker 
-                      name="start_date"
-                      selected={values.start_date}
-                      onChange={handleDateChange}
-                      dateFormat="DD/MM/YYYY"
-  // required
-/>
+                    /> 
+                
+
                   </label>
                 </div>
 
