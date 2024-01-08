@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { format,isValid } from 'date-fns';
 import Axios from "axios";
 import Link from 'next/link'
-import DatePicker from "react-multi-date-picker"
+import config from '../utils/config'
 
 function SignUp() {
-  const BASE_URL = "http://localhost:3001"
+  const BASE_URL = config.SERVER_URL
   const [values, setValues] = useState({
     f_name: "",
     l_name: "",
