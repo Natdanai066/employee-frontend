@@ -15,7 +15,7 @@ export default function Page() {
   const router = useRouter()
 
   const getEmployees = () => {
-    Axios.get(`${BASE_URL}/employee`).then((response) => {
+    Axios.get(`${BASE_URL}/employees`).then((response) => {
       setEmployeeList(response.data)
     })
   }
