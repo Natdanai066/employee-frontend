@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation"
 import Link from 'next/link'
 
 function editSlip() {
-    const BASE_URL = "http://localhost:3001"
+    const BASE_URL = "http://localhost:3000"
     const searchParams = useSearchParams()
     const empIdParams = searchParams.get("empId");
     const [employee, setEmployeeList] = useState([])

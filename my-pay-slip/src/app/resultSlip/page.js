@@ -4,6 +4,15 @@ import React, { useState, useEffect } from "react"
 import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
 
+export async function fetchData() {
+  try {
+    const response = await axios.get(`${apiUrl}/https://employee1-backend-production.up.railway.app`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
 
 
 export default function ResultSlipPage() {

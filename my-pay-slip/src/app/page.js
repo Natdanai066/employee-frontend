@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from 'next/link';
 
 export default function Page() {
-  const BASE_URL = "http://localhost:3001"
+  const BASE_URL = "employee1-backend-production.up.railway.app"
   
   const [employeeList, setEmployeeList] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
@@ -17,6 +17,9 @@ export default function Page() {
       setEmployeeList(response.data)
     })
   }
+
+  
+
 
   const deleteEmployee = (id) => {
     const shouldDelete = window.confirm("คุณต้องการลบข้อมูลนี้จริง ๆ หรือไม่?");
