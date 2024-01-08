@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react"
 import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
 
+const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 export async function fetchData() {
   try {
-    const response = await axios.get(`${apiUrl}/https://employee1-backend-production.up.railway.app`);
+    const response = await axios.get(`${apiUrl}/your-endpoint`);
     const data = response.data;
     return data;
   } catch (error) {
