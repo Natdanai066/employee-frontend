@@ -17,7 +17,7 @@ export async function fetchData() {
 
 
 export default function ResultSlipPage() {
-  const BASE_URL = "http://localhost:3001"
+  const BASE_URL = config.SERVER_URL
   const searchParams = useSearchParams()
   const empIdParams = searchParams.get("empId");
   const [employee, setEmployeeList] = useState([])
