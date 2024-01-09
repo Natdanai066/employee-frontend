@@ -8,7 +8,8 @@ import "./utils/config";
 import config from './utils/config'
 
 export default function Page() {
-  const BASE_URL = config.SERVER_URL
+  // const BASE_URL = config.SERVER_URL
+  const BASE_URL = "http://localhost:3001"
   
   const [employeeList, setEmployeeList] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
@@ -74,7 +75,7 @@ export default function Page() {
             <table className="table">
               <thead className="text-lg text-center">
                 <tr>
-                  <th className="border border-slate-300">#</th>
+                  <th className="border border-slate-300">id</th>
                   <th className="border border-slate-300">คำนำหน้า</th>
                   <th className="border border-slate-300">ชื่อ</th>
                   <th className="border border-slate-300">นามสกุล</th>
