@@ -263,7 +263,7 @@ function SignUp() {
                 <div className="mb-3">
                   <label className="form-control w-full">
                     <div className="label">
-                      <span className="label-text">ประกันสังคม</span>
+                      <span className="label-text">ประกันสังคม(%)</span>
                     </div>
                     <input
                       type="text"
