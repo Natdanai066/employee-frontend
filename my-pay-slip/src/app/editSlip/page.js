@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
 import Link from 'next/link'
+import config from './utils/config'
 
 function editSlip() {
     const BASE_URL = config.SERVER_URL
