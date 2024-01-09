@@ -12,7 +12,7 @@ function editSlip() {
     const [employee, setEmployeeList] = useState([])
 
     const getEmployees = () => {
-        Axios.get(`${BASE_URL}/employee/${empIdParams}`).then((response) => {
+        Axios.get(`${BASE_URL}/employees/${empIdParams}`).then((response) => {
             console.log('response data = ', response.data);
             setEmployeeList(response.data)
         })
