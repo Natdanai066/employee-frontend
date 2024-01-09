@@ -8,7 +8,8 @@ import "./utils/config";
 import config from './utils/config'
 
 export default function Page() {
-  const BASE_URL = config.SERVER_URL
+  // const BASE_URL = config.SERVER_URL
+  const BASE_URL = "http://localhost:3001" 
   
   const [employeeList, setEmployeeList] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
