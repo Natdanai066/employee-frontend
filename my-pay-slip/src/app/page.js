@@ -8,7 +8,7 @@ import "./utils/config";
 import config from './utils/config'
 
 export default function Page() {
-  const BASE_URL = 'https://employee1-backend-production.up.railway.app'
+  const BASE_URL = config.SERVER_URL
   
   const [employeeList, setEmployeeList] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
