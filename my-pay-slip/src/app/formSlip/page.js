@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { format,isValid } from 'date-fns';
 import Axios from "axios";
 import Link from 'next/link'
-import config from '../utils/config'
+import config from "../utils/config.js"
+import "../utils/config.js"
 
 function SignUp() {
   const BASE_URL = config.SERVER_URL

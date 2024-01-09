@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
 import Link from 'next/link'
-import config from './utils/config'
+import config from "../utils/config.js"
+
 
 function editSlip() {
     const BASE_URL = config.SERVER_URL
@@ -11,7 +12,7 @@ function editSlip() {
     const empIdParams = searchParams.get("empId");
     const [employee, setEmployeeList] = useState([])
 
-    const getEmployee = () => {
+    const getEmployees = () => {
         Axios.get(`${BASE_URL}/employee/${empIdParams}`).then((response) => {
             console.log('response data = ', response.data);
             setEmployeeList(response.data)
@@ -19,7 +20,7 @@ function editSlip() {
     }
 
     useEffect(() => {
-        getEmployee()
+        getEmployees()
     }, []);
 
     const [isSubmitSucceed, setIsSubmitSucceed] = useState(false)

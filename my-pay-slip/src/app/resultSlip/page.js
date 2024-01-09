@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react"
 import Axios from 'axios';
 import { useSearchParams } from "next/navigation"
-import config from './utils/config'
+import config from "../utils/config.js"
+import "../utils/config.js"
 
 const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 export async function fetchData() {
