@@ -11,15 +11,15 @@ function editSlip() {
     const empIdParams = searchParams.get("empId");
     const [employee, setEmployeeList] = useState([])
 
-    const getEmployees = () => {
-        Axios.get(`${BASE_URL}/employees/${empIdParams}`).then((response) => {
+    const getEmployee = () => {
+        Axios.get(`${BASE_URL}/employee/${empIdParams}`).then((response) => {
             console.log('response data = ', response.data);
             setEmployeeList(response.data)
         })
     }
 
     useEffect(() => {
-        getEmployees()
+        getEmployee()
     }, []);
 
     const [isSubmitSucceed, setIsSubmitSucceed] = useState(false)
